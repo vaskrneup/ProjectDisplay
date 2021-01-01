@@ -46,7 +46,7 @@
 }
 
 .elevated-container {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 20%;
     margin-right: 20%;
     padding-top: 20px;
@@ -97,3 +97,10 @@ tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+table a {
+
+}
+
+table a:hover {
+
+}
