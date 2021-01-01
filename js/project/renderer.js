@@ -19,7 +19,7 @@ export const RenderProjectBodyAsTable = ({projectData}) => {
                     <a href="${product.repository.url}" target="_blank">${product.repository.text}</a>
                 </td>
             </tr>
-        `
+        `;
     }
 
     return out;
