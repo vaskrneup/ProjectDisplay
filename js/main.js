@@ -42,12 +42,12 @@ function createMockData() {
             title: i.toString(),
             assignmentType: "Github Pages Test Project-" + i.toString(),
             demo: {
-                url: "https://vaskrneup.github.io/test-project/",
-                text: "Demo"
+                url: "https://vaskrneup.github.io/test-project/" + i.toString(),
+                text: "Demo" + i.toString()
             },
             repository: {
-                url: "https://github.com/vaskrneup/test-project",
-                text: "Review Code"
+                url: "https://github.com/vaskrneup/test-project" + i.toString(),
+                text: "Review Code" + i.toString()
             }
         });
     }

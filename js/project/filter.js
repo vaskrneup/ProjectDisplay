@@ -26,9 +26,18 @@ export const sortProjects = ({projectData, field, order = "asc"}) => {
     const _order = order === "asc" ? 1 : -1;
 
     toSortProjectData.sort((a, b) => {
-        if (a[field] > b[field]) return _order;
-        else if (a[field] < b[field]) return -1 * _order;
-        else return 0;
+        if (field === "demo" || field === "repository") {
+            a = a[field];
+            b = b[field];
+
+            if (a["url"] > b["url"]) return _order;
+            else if (a["url"] < b["url"]) return -1 * _order;
+            else return 0;
+        } else {
+            if (a[field] > b[field]) return _order;
+            else if (a[field] < b[field]) return -1 * _order;
+            else return 0;
+        }
     });
 
     return toSortProjectData;
