@@ -5,22 +5,20 @@
 }
 
 .project-table {
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
     color: #070b34;
-    tab-index: -1;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-
 }
 
 .elevated-container {
     margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
     padding-top: 30px;
     padding-bottom: 30px;
-    width: 80%;
+    width: 60%;
 
     /*filter: blur(1px);*/
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
