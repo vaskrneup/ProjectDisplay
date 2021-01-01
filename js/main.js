@@ -1,6 +1,9 @@
 import {RenderProjectBodyAsTable} from "./project/renderer.js";
 import {filterProjects, sortProjects} from "./project/filter.js";
 
+// =====================================================================================
+// VARS !!
+// =====================================================================================s
 export const projectData = [
     {
         date: new Date(2020, 11, 31),
@@ -17,6 +20,21 @@ export const projectData = [
     }
 ]
 
+export const sortMapper = {
+    date: "asc",
+    title: "asc",
+    assignmentType: "asc",
+    demo: "asc",
+    repository: "asc"
+}
+// =====================================================================================
+// END VARS !!
+// =====================================================================================
+
+
+// =====================================================================================
+// UTILITY FUNC !!
+// =====================================================================================
 function createMockData() {
     for (let i = 100; i > 1; i--) {
         projectData.push({
@@ -31,20 +49,30 @@ function createMockData() {
                 url: "https://github.com/vaskrneup/test-project",
                 text: "Review Code"
             }
-        })
+        });
     }
+}
+
+const updateSortMapper = ({name}) => {
+    sortMapper[name] = sortMapper[name] === "asc" ? "dec" : "asc";
 }
 
 createMockData();
 // =====================================================================================
+// END UTILITY FUNC !!
+// =====================================================================================
+
+// =====================================================================================
 // END SUPPORTER FUNCTIONS !!
 // =====================================================================================
-const updateSortedTable = ({projectData, column, order = "asc"}) => {
+const updateSortedTable = ({projectData, column}) => {
+    updateSortMapper({name: column});
+
     renderProjectTable(
         sortProjects({
             projectData: projectData,
             field: column,
-            order: order
+            order: sortMapper[column]
         })
     )
 }
@@ -72,27 +100,22 @@ document.getElementById("additional-feature__form").onsubmit = function (e) {
 // For sort feature !!
 document.getElementById("table__date").onclick = () => updateSortedTable({
     projectData: projectData,
-    order: "asc",
     column: "date"
 })
 document.getElementById("table__title").onclick = () => updateSortedTable({
     projectData: projectData,
-    order: "asc",
     column: "title"
 })
 document.getElementById("table__assignmentType").onclick = () => updateSortedTable({
     projectData: projectData,
-    order: "asc",
     column: "assignmentType"
 })
 document.getElementById("table__demo").onclick = () => updateSortedTable({
     projectData: projectData,
-    order: "asc",
     column: "demo"
 })
 document.getElementById("table__repository").onclick = () => updateSortedTable({
     projectData: projectData,
-    order: "asc",
     column: "repository"
 })
 // END sort feature !!
