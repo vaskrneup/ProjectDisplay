@@ -1,6 +1,6 @@
 export const filterProjects = ({projectData, keyword}) => {
     const filteredProducts = [];
-    keyword = keyword.toLocaleString();
+    keyword = keyword.toLowerCase();
 
     for (let i = 0; i < projectData.length; i++) {
         const product = projectData[i];
