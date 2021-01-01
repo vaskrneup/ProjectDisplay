@@ -18,7 +18,7 @@ def run_server(host="localhost", port=8000):
     if os_name == "nt":
         system(f"start chrome {url}")
     else:  # for linux
-        pass
+        system(f"firefox {url}")
 
     httpd.serve_forever()
 
