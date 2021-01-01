@@ -19,3 +19,17 @@ export const filterProjects = ({projectData, keyword}) => {
 
     return filteredProducts;
 }
+
+
+export const sortProjects = ({projectData, field, order = "asc"}) => {
+    const toSortProjectData = projectData;
+    const _order = order === "asc" ? 1 : -1;
+
+    toSortProjectData.sort((a, b) => {
+        if (a[field] > b[field]) return _order;
+        else if (a[field] < b[field]) return -1 * _order;
+        else return 0;
+    });
+
+    return toSortProjectData;
+}
