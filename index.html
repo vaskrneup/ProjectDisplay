@@ -14,21 +14,32 @@
         <h1 class="intro__name">BHASKAR NEUPANE</h1>
     </div>
     <!-- Intro End -->
-    <label>
-        <input type="text" id="filter-input">
-        <button id="filter-input__button">filter</button>
-    </label>
+
+    <!-- Filter functionality START !! -->
+    <div class="additional-feature-container">
+        <div class="additional-feature__filter-container">
+            <form id="additional-feature__form">
+                <label>
+                    <input type="text" id="filter-input" autocomplete="off" class="theme__input-box"
+                           placeholder="Type to filter">
+                    <button id="filter-input__button" class="theme__input-filter-button">FILTER</button>
+                </label>
+            </form>
+        </div>
+    </div>
+    <!-- Filter functionality END !! -->
+
     <div class="project-table__container">
         <!-- Project Table Start !! -->
         <table class="project-table">
             <!-- Project Table head start !! -->
             <thead>
             <tr class="sticky-header">
-                <td>Date</td>
-                <td>Title</td>
-                <td>Assignment Type</td>
-                <td>Demo</td>
-                <td>Repository</td>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Assignment Type</th>
+                <th>Demo</th>
+                <th>Repository</th>
             </tr>
             </thead>
             <!-- Project Table Head End !! -->

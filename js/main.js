@@ -14,13 +14,14 @@ export const projectData = [
             url: "https://github.com/vaskrneup/test-project",
             text: "Review Code"
         }
-    }
+    },
 ]
 
 // =====================================================================================
 // HANDLE DOM EVENTS !!
 // =====================================================================================
-document.getElementById("filter-input__button").onclick = function (e) {
+document.getElementById("additional-feature__form").onsubmit = function (e) {
+    e.preventDefault();
     const filterText = document.getElementById("filter-input").value;
 
     renderProjectTable(
