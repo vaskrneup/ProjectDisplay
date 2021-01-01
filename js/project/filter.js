@@ -12,6 +12,7 @@ export const filterProjects = ({projectData, keyword}) => {
             || product.demo.text.toLowerCase().includes(keyword) || product.demo.url.toLowerCase().includes(keyword)
             || product.repository.text.toLowerCase().includes(keyword) || product.repository.url.toLowerCase().includes(keyword)
             || product.date.toLocaleDateString(locale, dateDisplayOptions).toString().toLowerCase().includes(keyword)
+            || product.pk.toLowerCase().includes(keyword)
         ) {
             filteredProducts.push(product);
         }

@@ -6,6 +6,7 @@ import {filterProjects, sortProjects} from "./project/filter.js";
 // =====================================================================================s
 export const projectData = [
     {
+        pk: "PK_1",
         date: new Date(2020, 11, 31),
         title: "Test Project ",
         assignmentType: "Github Pages Test Project",
