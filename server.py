@@ -1,16 +1,25 @@
 from http.server import SimpleHTTPRequestHandler
 import socketserver
 from sys import argv
+from os import name as os_name, system
 
 
 def run_server(host="localhost", port=8000):
-    print(f"[+] Running server on http://{host}:{port}")
+    url = f"http://{host}:{port}"
+    print(f"[+] Running server on {url}")
 
     SimpleHTTPRequestHandler.extensions_map.update({
         ".js": "application/javascript",
     })
 
     httpd = socketserver.TCPServer((host, port), SimpleHTTPRequestHandler)
+
+    # for windows !!
+    if os_name == "nt":
+        system(f"start chrome {url}")
+    else:  # for linux
+        pass
+
     httpd.serve_forever()
 
 
