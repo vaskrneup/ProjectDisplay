@@ -18,8 +18,7 @@ export const projectData = [
             text: "Review Code"
         }
     }
-]
-
+];
 export const sortMapper = {
     date: "asc",
     title: "asc",
@@ -27,6 +26,7 @@ export const sortMapper = {
     demo: "asc",
     repository: "asc"
 }
+export let activeProjectData = projectData;
 // =====================================================================================
 // END VARS !!
 // =====================================================================================
@@ -65,16 +65,18 @@ createMockData();
 // =====================================================================================
 // END SUPPORTER FUNCTIONS !!
 // =====================================================================================
-const updateSortedTable = ({projectData, column}) => {
+const updateSortedTable = ({column}) => {
     updateSortMapper({name: column});
 
+    activeProjectData = sortProjects({
+        projectData: activeProjectData,
+        field: column,
+        order: sortMapper[column]
+    });
+
     renderProjectTable(
-        sortProjects({
-            projectData: projectData,
-            field: column,
-            order: sortMapper[column]
-        })
-    )
+        activeProjectData
+    );
 }
 // =====================================================================================
 // SUPPORTER FUNCTIONS !!
@@ -88,36 +90,20 @@ const updateSortedTable = ({projectData, column}) => {
 document.getElementById("additional-feature__form").onsubmit = function (e) {
     e.preventDefault();
     const filterText = document.getElementById("filter-input").value;
+    activeProjectData = filterProjects({
+        projectData: projectData, keyword: filterText
+    });
 
-    renderProjectTable(
-        filterProjects({
-            projectData: projectData, keyword: filterText
-        })
-    );
+    renderProjectTable(activeProjectData);
 };
 // END search and filter feature !!
 
 // For sort feature !!
-document.getElementById("table__date").onclick = () => updateSortedTable({
-    projectData: projectData,
-    column: "date"
-})
-document.getElementById("table__title").onclick = () => updateSortedTable({
-    projectData: projectData,
-    column: "title"
-})
-document.getElementById("table__assignmentType").onclick = () => updateSortedTable({
-    projectData: projectData,
-    column: "assignmentType"
-})
-document.getElementById("table__demo").onclick = () => updateSortedTable({
-    projectData: projectData,
-    column: "demo"
-})
-document.getElementById("table__repository").onclick = () => updateSortedTable({
-    projectData: projectData,
-    column: "repository"
-})
+document.getElementById("table__date").onclick = () => updateSortedTable({column: "date"});
+document.getElementById("table__title").onclick = () => updateSortedTable({column: "title"});
+document.getElementById("table__assignmentType").onclick = () => updateSortedTable({column: "assignmentType"});
+document.getElementById("table__demo").onclick = () => updateSortedTable({column: "demo"});
+document.getElementById("table__repository").onclick = () => updateSortedTable({column: "repository"});
 // END sort feature !!
 
 // =====================================================================================
@@ -135,7 +121,7 @@ function renderProjectTable(data) {
 // HANDLE INITIAL EVENTS, TO LOAD DATA !!
 // =====================================================================================
 // load table with all data initially !!
-renderProjectTable(projectData);
+renderProjectTable(activeProjectData);
 // =====================================================================================
 // END HANDLE INITIAL EVENTS, TO LOAD DATA !!
 // =====================================================================================
