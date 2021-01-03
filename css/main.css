@@ -168,5 +168,9 @@ th {
         padding-bottom: 30px;
         width: 96%;
     }
+
+    .project-table__message-container {
+        margin-bottom: 20px;
+    }
 }
 
