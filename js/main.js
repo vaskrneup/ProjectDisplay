@@ -36,19 +36,20 @@ export let activeProjectData = projectData;
 // =====================================================================================
 // UTILITY FUNC !!
 // =====================================================================================
-function createMockData() {
-    for (let i = 100; i > 1; i--) {
+function createMockData({n = 100}) {
+    for (let i = n; i > 1; i--) {
         projectData.push({
-            date: new Date(2020, 11, i),
-            title: i.toString(),
-            assignmentType: "Github Pages Test Project-" + i.toString(),
+            pk: "PK " + i.toString(), // PK: Project Key 😂
+            date: new Date(2021, Math.floor(Math.random() * 30), Math.floor(Math.random() * 30)),
+            title: (Math.random() * 100000).toString(),
+            assignmentType: "Random Project-" + Math.floor(Math.random() * 1000000).toString(),
             demo: {
-                url: "https://vaskrneup.github.io/test-project/" + i.toString(),
-                text: "Demo" + i.toString()
+                url: "https://vaskrneup.github.io/test-project/" + Math.floor(Math.random() * 1000000).toString(),
+                text: "Demo" + Math.floor(Math.random() * 1000000).toString()
             },
             repository: {
-                url: "https://github.com/vaskrneup/test-project" + i.toString(),
-                text: "Review Code" + i.toString()
+                url: "https://github.com/vaskrneup/test-project" + Math.floor(Math.random() * 1000000).toString(),
+                text: "Review Code" + Math.floor(Math.random() * 1000000).toString()
             }
         });
     }
@@ -58,7 +59,7 @@ const updateSortMapper = ({name}) => {
     sortMapper[name] = sortMapper[name] === "asc" ? "dec" : "asc";
 }
 
-// createMockData();
+// createMockData({n: 100});
 // =====================================================================================
 // END UTILITY FUNC !!
 // =====================================================================================
@@ -89,6 +90,7 @@ const updateSortedTable = ({column}) => {
 document.getElementById("additional-feature__form").onsubmit = function (e) {
     e.preventDefault();
     const filterText = document.getElementById("filter-input").value;
+
     activeProjectData = filterProjects({
         projectData: projectData, keyword: filterText
     });
