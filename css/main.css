@@ -108,6 +108,11 @@
     padding-top: 9px;
 }
 
+.project-table__message-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
 /* Default styles for table !! */
 /* Table Cell styles !! */
 table, th, td {

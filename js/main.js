@@ -5,20 +5,20 @@ import {filterProjects, sortProjects} from "./project/filter.js";
 // VARS !!
 // =====================================================================================s
 export const projectData = [
-    {
-        pk: "PK_1",
-        date: new Date(2020, 11, 31),
-        title: "Test Project ",
-        assignmentType: "Github Pages Test Project",
-        demo: {
-            url: "https://vaskrneup.github.io/test-project/",
-            text: "Demo"
-        },
-        repository: {
-            url: "https://github.com/vaskrneup/test-project",
-            text: "Review Code"
-        }
-    }
+    // {
+    //     pk: "PK_1",
+    //     date: new Date(2020, 11, 31),
+    //     title: "Test Project ",
+    //     assignmentType: "Github Pages Test Project",
+    //     demo: {
+    //         url: "https://vaskrneup.github.io/test-project/",
+    //         text: "Demo"
+    //     },
+    //     repository: {
+    //         url: "https://github.com/vaskrneup/test-project",
+    //         text: "Review Code"
+    //     }
+    // }
 ];
 export const sortMapper = {
     date: "asc",
@@ -64,23 +64,21 @@ const updateSortMapper = ({name}) => {
 // =====================================================================================
 
 // =====================================================================================
-// END SUPPORTER FUNCTIONS !!
+// SUPPORTER FUNCTIONS !!
 // =====================================================================================
 const updateSortedTable = ({column}) => {
     updateSortMapper({name: column});
 
-    activeProjectData = sortProjects({
-        projectData: activeProjectData,
-        field: column,
-        order: sortMapper[column]
-    });
-
     renderProjectTable(
-        activeProjectData
+        sortProjects({
+            projectData: activeProjectData,
+            field: column,
+            order: sortMapper[column]
+        })
     );
 }
 // =====================================================================================
-// SUPPORTER FUNCTIONS !!
+// END SUPPORTER FUNCTIONS !!
 // =====================================================================================
 
 
@@ -113,6 +111,12 @@ document.getElementById("table__repository").onclick = () => updateSortedTable({
 
 
 function renderProjectTable(data) {
+    let tableMessage = "";
+
+    if (projectData.length === 0) tableMessage = "Seems like no project is started.";
+    else if (activeProjectData.length === 0) tableMessage = "No project matches your filter.";
+
+    document.getElementById("project-table__message").innerText = tableMessage;
     document.getElementById("project-table").innerHTML = RenderProjectBodyAsTable({
         projectData: data
     });
