@@ -59,7 +59,7 @@ const updateSortMapper = ({name}) => {
     sortMapper[name] = sortMapper[name] === "asc" ? "dec" : "asc";
 }
 
-createMockData({n: 100});
+// createMockData({n: 100});
 // =====================================================================================
 // END UTILITY FUNC !!
 // =====================================================================================
