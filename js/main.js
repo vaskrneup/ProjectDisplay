@@ -5,20 +5,20 @@ import {filterProjects, sortProjects} from "./project/filter.js";
 // VARS !!
 // =====================================================================================s
 export const projectData = [
-    // {
-    //     pk: "PK_1",
-    //     date: new Date(2020, 11, 31),
-    //     title: "Test Project ",
-    //     assignmentType: "Github Pages Test Project",
-    //     demo: {
-    //         url: "https://vaskrneup.github.io/test-project/",
-    //         text: "Demo"
-    //     },
-    //     repository: {
-    //         url: "https://github.com/vaskrneup/test-project",
-    //         text: "Review Code"
-    //     }
-    // }
+    {
+        pk: "PK_1",
+        date: new Date(2021, 0, 4),
+        title: "Assignment Page",
+        assignmentType: "HTML CSS JS",
+        demo: {
+            url: "https://vaskrneup.github.io/",
+            text: "Demo"
+        },
+        repository: {
+            url: "https://github.com/vaskrneup/vaskrneup.github.io",
+            text: "Review Code"
+        }
+    }
 ];
 export const sortMapper = {
     date: "asc",
