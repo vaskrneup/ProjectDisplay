@@ -6,10 +6,24 @@ import {filterProjects, sortProjects} from "./project/filter.js";
 // =====================================================================================s
 export const projectData = [
     {
-        pk: "PK_1",
+        pk: "PK_2",
         date: new Date(2021, 0, 4),
+        title: "TuTangle Page Design",
+        assignmentType: "HTML & CSS",
+        demo: {
+            url: "https://vaskrneup.github.io/TuTangle/",
+            text: "Demo"
+        },
+        repository: {
+            url: "https://github.com/vaskrneup/TuTangle",
+            text: "Review Code"
+        }
+    },
+    {
+        pk: "PK_1",
+        date: new Date(2021, 0, 3),
         title: "Assignment Page",
-        assignmentType: "HTML CSS JS",
+        assignmentType: "HTML, CSS & JS",
         demo: {
             url: "https://vaskrneup.github.io/",
             text: "Demo"
@@ -18,7 +32,7 @@ export const projectData = [
             url: "https://github.com/vaskrneup/vaskrneup.github.io",
             text: "Review Code"
         }
-    }
+    },
 ];
 export const sortMapper = {
     date: "asc",
