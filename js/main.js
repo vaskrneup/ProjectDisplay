@@ -8,8 +8,8 @@ export const projectData = [
     {
         pk: "PK_2",
         date: new Date(2021, 0, 4),
-        title: "TuTangle Page Design",
-        assignmentType: "HTML & CSS",
+        title: "1-A home-search",
+        assignmentType: "HTML & CSS BOXING DIVS",
         demo: {
             url: "https://vaskrneup.github.io/TuTangle/",
             text: "Demo"
