@@ -49,11 +49,11 @@ export const projectData = [
     },
 ];
 export const sortMapper = {
-    date: "asc",
-    title: "asc",
-    assignmentType: "asc",
-    demo: "asc",
-    repository: "asc"
+    date: "dec",
+    title: "dec",
+    assignmentType: "dec",
+    demo: "dec",
+    repository: "dec"
 }
 export let activeProjectData = projectData;
 // =====================================================================================
