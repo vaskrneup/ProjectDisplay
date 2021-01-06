@@ -6,6 +6,20 @@ import {filterProjects, sortProjects} from "./project/filter.js";
 // =====================================================================================s
 export const projectData = [
     {
+        pk: "PK_3",
+        date: new Date(2021, 0, 6),
+        title: "Responsive 1-A home-search",
+        assignmentType: "RESPONSIVE HTML & CSS",
+        demo: {
+            url: "https://vaskrneup.github.io/ResponsiveTuTangle/",
+            text: "Demo"
+        },
+        repository: {
+            url: "https://github.com/vaskrneup/ResponsiveTuTangle",
+            text: "Review Code"
+        }
+    },
+    {
         pk: "PK_2",
         date: new Date(2021, 0, 4),
         title: "1-A home-search",
