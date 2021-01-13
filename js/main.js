@@ -6,10 +6,10 @@ import {filterProjects, sortProjects} from "./project/filter.js";
 // =====================================================================================s
 export const projectData = [
     {
-        PK: "PK_5",
-        date: new Date(2021, 0, 13),
-        title: "Js Assignment",
-        assignmentType: "BASICS",
+        pk: "PK_5",
+        date: new Date(2021, 0, 11),
+        title: "Js Basics Assignment",
+        assignmentType: "JS BASICS",
         demo: {
             url: "https://vaskrneup.github.io/JSAssignment/",
             text: "Demo"
