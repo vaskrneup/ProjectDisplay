@@ -6,6 +6,20 @@ import {filterProjects, sortProjects} from "./project/filter.js";
 // =====================================================================================s
 export const projectData = [
     {
+        pk: "PK_9",
+        date: new Date(2021, 0, 20),
+        title: "Flappy Bird",
+        assignmentType: "JS GAME",
+        demo: {
+            url: "https://vaskrneup.github.io/FlappyBird",
+            text: "Demo"
+        },
+        repository: {
+            url: "https://github.com/vaskrneup/FlappyBird",
+            text: "Review Code"
+        }
+    },
+    {
         pk: "PK_8",
         date: new Date(2021, 0, 19),
         title: "JS Car Game",
